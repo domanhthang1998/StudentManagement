@@ -18,10 +18,30 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header File\Function.h" />
+    <ClInclude Include="Header File\Typedef.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source File\ClassFunction\CreateClass.cpp" />
+    <ClCompile Include="Source File\ClassFunction\DeleteClass.cpp" />
+    <ClCompile Include="Source File\ClassFunction\MergeClass.cpp" />
+    <ClCompile Include="Source File\HelperFunction\FunctionInClass.cpp" />
+    <ClCompile Include="Source File\HelperFunction\FunctionInMainMenu.cpp" />
+    <ClCompile Include="Source File\HelperFunction\MenuDisplay.cpp" />
+    <ClCompile Include="Source File\HelperFunction\MinMSSV.cpp" />
+    <ClCompile Include="Source File\Main.cpp" />
+    <ClCompile Include="Source File\StudentFunction\AddStudent.cpp" />
+    <ClCompile Include="Source File\StudentFunction\CreateStudent.cpp" />
+    <ClCompile Include="Source File\StudentFunction\DeleteStudent.cpp" />
+    <ClCompile Include="Source File\StudentFunction\PrintListStudent.cpp" />
+    <ClCompile Include="Source File\StudentFunction\SearchStudent.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{81DF8853-1A69-4979-9D7C-03981D367ACD}</ProjectGuid>
     <RootNamespace>Project5</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>StudentManagement</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -68,7 +88,11 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>E:\Visual Studio\Project5\Project5\Header File;$(IncludePath)</IncludePath>
+    <SourcePath>E:\Visual Studio\Project5\Project5\Source File\StudentFunction;E:\Visual Studio\Project5\Project5\Source File\HelperFunction;E:\Visual Studio\Project5\Project5\Source File\ClassFunction;$(SourcePath)</SourcePath>
+    <ExecutablePath>E:\Visual Studio\Project5\Project5;$(ExecutablePath)</ExecutablePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -109,8 +133,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
